@@ -32,10 +32,11 @@
         <constructor-arg index="2" value="37"></constructor-arg>
     </bean>
 
-    <!--Bean having two values-->
-    <bean name="movieA,movieC" class="com.stackroute.domain.Movie" scope="prototype">
-        <property name="actor" ref="actor"></property>
+
+    <bean id="movieB" class="com.stackroute.domain.Movie" autowire="byName">
+        <constructor-arg name="actor" ref="actorA"></constructor-arg>
     </bean>
+
 
     <bean id="movieB" class="com.stackroute.domain.Movie" autowire="byName">
         <constructor-arg name="actor" ref="actorA"></constructor-arg>
