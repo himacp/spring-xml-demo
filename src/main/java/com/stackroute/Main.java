@@ -15,26 +15,16 @@ import org.springframework.core.io.ClassPathResource;
 public class Main {
     public static void main(String[] args) {
 
-
-        //using bean factory
-        BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        Movie movie=(Movie) beanFactory.getBean("movie");
-        System.out.println(movie.getActor());
-
-        //using bean BeanDefinitionRegistry and  BeanDefinitionReader
-
-
-        BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
-        BeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
-        beanDefinitionReader.loadBeanDefinitions(new ClassPathResource("beans.xml"));
-        Movie movie1 = ((DefaultListableBeanFactory) beanDefinitionRegistry).getBean(Movie.class);
+        //Used Application context with name having two values
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Movie movie1 = (Movie)context.getBean("movieA");
         System.out.println(movie1.getActor());
 
-//using application Context
-
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie2 = context.getBean(Movie.class);
-        System.out.println(movie2.getActor());
+        //Using same context to get beans of other name
+        Movie movie2 = (Movie)context.getBean("movieC");
+        System.out.println(movie1.getActor());
+        //Comparing the objects
+        System.out.println(movie1==movie2);
 
     }
 }
