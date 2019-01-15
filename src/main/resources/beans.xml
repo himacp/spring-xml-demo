@@ -41,4 +41,8 @@
     <bean id="movieB" class="com.stackroute.domain.Movie" autowire="byName">
         <constructor-arg name="actor" ref="actorA"></constructor-arg>
     </bean>
+
+
+    <bean id="beanLifecycleDemoBean" class="com.stackroute.domain.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy">
+    </bean>
 </beans>
