@@ -15,16 +15,14 @@ import org.springframework.core.io.ClassPathResource;
 public class Main {
     public static void main(String[] args) {
 
-        //Used Application context with name having two values
+        System.out.println();
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie1 = (Movie)context.getBean("movieA");
         System.out.println(movie1.getActor());
 
-        //Using same context to get beans of other name
-        Movie movie2 = (Movie)context.getBean("movieC");
-        System.out.println(movie1.getActor());
-        //Comparing the objects
-        System.out.println(movie1==movie2);
+        Movie movie2 = (Movie)context.getBean("movieD");
+        System.out.println(movie2.getActor());
+
 
     }
 }
