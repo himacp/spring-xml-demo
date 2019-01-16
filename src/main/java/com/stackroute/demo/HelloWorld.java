@@ -1,7 +1,8 @@
 package com.stackroute.demo;
 
 public class HelloWorld {
-    private String message;    public void setMessage(String message){
+    private String message;
+    public void setMessage(String message){
         this.message  = message;
     }
     public void getMessage(){
