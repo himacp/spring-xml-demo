@@ -12,7 +12,7 @@
         <property name="age" value="33"></property>
     </bean>
 
-    <!-- Constructor based injection-->
+     <!--Constructor based injection-->
     <bean id="actorA" class="com.stackroute.domain.Actor">
         <constructor-arg name="name" value="ganesh"></constructor-arg>
         <constructor-arg name="gender" value="male"></constructor-arg>
