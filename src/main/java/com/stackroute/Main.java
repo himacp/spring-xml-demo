@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.domain.Actor;
+import com.stackroute.domain.BeanLifecycleDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
@@ -19,8 +20,8 @@ public class Main
 
         System.out.println();
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie1 = context.getBean(Movie.class);
-        System.out.println(movie1.getActor());
+        BeanLifecycleDemoBean beanLifecycleDemoBean=(BeanLifecycleDemoBean)context.getBean("beanLifecycleDemoBean");
+
 
     }
 }

@@ -4,6 +4,10 @@ public class Movie {
     public Actor actor;
     public Movie(){}
 
+    public Movie(Actor actor) {
+        this.actor = actor;
+    }
+
     public Actor getActor() {
         return actor;
     }
