@@ -1,27 +1,15 @@
 package com.stackroute;
-
-import com.stackroute.domain.Actor;
-import com.stackroute.domain.BeanLifecycleDemoBean;
-import com.stackroute.domain.Movie;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.support.BeanDefinitionReader;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
+import com.stackroute.demo.HelloWorld;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
-
 public class Main
 {
-    public static void main(String[] args)
-    {
-
-        System.out.println();
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        BeanLifecycleDemoBean beanLifecycleDemoBean=(BeanLifecycleDemoBean)context.getBean("beanLifecycleDemoBean");
-
-
+    public static void main(String[] args) {
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+        obj.getMessage();
+        context.registerShutdownHook();
     }
 }
