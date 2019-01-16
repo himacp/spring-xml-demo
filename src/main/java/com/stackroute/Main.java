@@ -21,7 +21,7 @@ public class Main {
         System.out.println(movie1.getActor());
 
         //Using same context to get beans of other name
-        Movie movie2 = (Movie)context.getBean("movieC");
+        Movie movie2 = (Movie)context.getBean("movieB");
         System.out.println(movie2.getActor());
         //Comparing the objects
         System.out.println(movie1==movie2);
