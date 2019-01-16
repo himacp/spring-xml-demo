@@ -8,8 +8,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main
 {
     public static void main(String[] args) {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        HelloWorld obj = (HelloWorld) context.getBean("helloWorld"); //calling the id
         obj.getMessage();
-        context.registerShutdownHook();
+        context.registerShutdownHook(); //destroy that bean
     }
 }

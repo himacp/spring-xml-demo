@@ -10,10 +10,5 @@
     <property name="message" value="HelloWorld"></property>
 </bean>
 
-
     <bean id="beanPostProcessorDemoBean" class="com.stackroute.demo.BeanPostProcessorDemoBean"></bean>
-
-
-    <!--<bean id="beanLifecycleDemoBean" class="com.stackroute.domain.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy">-->
-    <!--</bean>-->
 </beans>
