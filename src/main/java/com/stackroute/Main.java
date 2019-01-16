@@ -20,7 +20,7 @@ public class Main {
         Movie movie1 = (Movie)context.getBean("movieA");
         System.out.println(movie1.getActor());
 
-        Movie movie2 = (Movie)context.getBean("movieD");
+        Movie movie2 = (Movie)context.getBean("movieB");
         System.out.println(movie2.getActor());
 
 
